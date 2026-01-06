@@ -1,0 +1,72 @@
+{
+	"Name": "Filtro_passa_banda",
+	"Description": "TRbalho radar",
+	"Tool": "FW",
+	"Version": "1.3",
+	"Design": {
+		"visitedTabs": [
+			"filter-type",
+			"specifications",
+			"components",
+			"tolerances"
+		],
+		"filterType": "bandPass",
+		"specifications": {
+			"gain": 0,
+			"gainUnit": "dB",
+			"passbandAttenuation": -3,
+			"passbandFrequency": 400,
+			"stopbandAttenuation": -10,
+			"stopbandFrequency": 1000,
+			"filterResponseValue": 0.05,
+			"filterResponseSlider": "94",
+			"centerFrequency": 70
+		},
+		"components": {
+			"vsPlus": 3.3,
+			"vsMinus": 0,
+			"optimization": "Noise",
+			"optimizationPreference": "nonSpecific",
+			"compensateForGbw": false,
+			"preferredAlgorithms": {
+				"sallenKey|lowPass": "lowpassV2"
+			},
+			"referenceVoltage": 1.65,
+			"stages": [
+				{
+					"stageLetter": "A",
+					"componentSizing": 83,
+					"gain": -1,
+					"gainEnabled": false,
+					"implementation": "sallenKey",
+					"opAmps": "LT6233"
+				},
+				{
+					"stageLetter": "B",
+					"componentSizing": 120,
+					"gain": -1,
+					"gainEnabled": false,
+					"implementation": "sallenKey",
+					"opAmps": "LT6233"
+				}
+			],
+			"recommendedAmps": [],
+			"sortOrder": [
+				1,
+				0
+			]
+		},
+		"tolerances": {
+			"resistorTolerance": "5%",
+			"capacitorTolerance": "5%",
+			"inductorTolerance": "5%",
+			"opAmpGbwTolerance": "20%",
+			"resistorPreferredSeries": "E12",
+			"capacitorPreferredSeries": "E12",
+			"inductorPreferredSeries": "E12"
+		},
+		"nextSteps": {}
+	},
+	"CreatedDate": "2025-11-05 02:23:54 PM",
+	"UpdatedDate": "2025-11-05 02:23:54 PM"
+}
